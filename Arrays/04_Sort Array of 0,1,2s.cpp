@@ -13,7 +13,7 @@ void optimal(int arr[], int n){
     // If arr[mid] is 2 then we will swap arr[mid] and arr[high] and decrement high
     int low = 0, mid = 0, high = n-1;
     while(mid<=high){
-        if(arr[mid]==0){
+        if(arr[mid]==0){f
             swap(arr[low], arr[mid]);
             low++;
             mid++;
