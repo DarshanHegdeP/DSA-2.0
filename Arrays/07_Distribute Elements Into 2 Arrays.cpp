@@ -28,7 +28,8 @@
 // In the 4th operation, as the last element of arr2 is greater than the last element of arr1 (4 > 3), append nums[4] to arr2, hence arr2 becomes [4,8].
 // After 4 operations, arr1 = [5,3] and arr2 = [4,8].
 // Hence, the array result formed by concatenation is [5,3,4,8].
-
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
     vector<int> resultArray(vector<int>& nums) {
