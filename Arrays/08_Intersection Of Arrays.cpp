@@ -26,8 +26,8 @@ vector<int> optimal(vector<int> &a,vector<int> b){
         else if(a[i]>b[j]) j++;
         else{
             if(res.empty() || res.back()!=a[i]){
-                res.push_back(a[i]);i++;j++;
-            }
+                res.push_back(a[i]);
+            }i++;j++;
         }
     }
     return res;
