@@ -51,7 +51,7 @@ vector<int> brute(vector<int> a,vector<int> b){
     for(int i=0;i<a.size();i++){
         bool found=false;
         for(int k=0;k<res.size();k++){
-            if(res[k]==a[i]) found=true;
+            if(res[k]==a[i]) {found=true;break;}
         }
         if(found) continue;
         for(int j=0;j<b.size();j++){
