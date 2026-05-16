@@ -15,7 +15,9 @@
 
 // Input: n = 1
 // Output: 0
-
+#include <bits/stdc++.h>
+#include <vector>
+using namespace std;
 class Solution {
 public:
     int countPrimes(int n) {
@@ -36,3 +38,10 @@ public:
         
     }
 };
+
+int main(){
+    int n=10;
+    Solution sol;
+    int result = sol.countPrimes(n);
+    cout<<result;
+}
