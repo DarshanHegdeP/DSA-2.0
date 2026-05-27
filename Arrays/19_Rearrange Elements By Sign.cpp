@@ -21,6 +21,9 @@ using namespace std;
 class Solution {
 public:
 
+    //Brute approach is use 2 arrays one for storing positive numbers and another for storing negatives;
+    //Then copy it back to original array, by placing positives in even and negatives in odd positions.
+
     vector<int> rearrangeArray(vector<int>& nums) {
         //Optimal approach
         // Time complexity: O(n)
