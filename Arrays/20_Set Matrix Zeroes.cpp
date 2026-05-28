@@ -90,7 +90,7 @@ void optimal(vector<vector<int>> &mat)
             if (mat[i][j] == 0) {
                 mat[i][0] = 0;    // mark this row
                 mat[0][j] = 0;    // mark this column
-            }
+            } 
         }
     }
 
