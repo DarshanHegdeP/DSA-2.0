@@ -22,7 +22,18 @@ using namespace std;
 int brute(vector<int>& nums){
     // Time complexity: O(n^2) due to nested loops
     // Space complexity: O(1)
-    // We can sort the array and then iterate through it to find the longest consecutive sequence.
+    int longest=0;
+  
+    for(int i=0;i<nums.size();i++){
+     int count=1;
+     while(find(nums.begin(),nums.end(),nums[i]+count)!=nums.end()){// Check if the next consecutive number exists in the array
+        //kind of like a while loop to keep checking for the next consecutive number until we find a break in the sequence. We can keep track of the longest sequence length found.
+        //linear search to find the next consecutive number in the array, which takes O(n) time. Since we have a loop that iterates through each element of the array, the overall time complexity is O(n^2).
+         count++;
+     }
+        longest=max(longest,count);
+    }
+    return longest;
 }
 
 int better(vector<int>& nums){
@@ -30,6 +41,17 @@ int better(vector<int>& nums){
     // Space complexity: O(1) if we sort in place, otherwise O(n)
     // We can sort the array and then iterate through it to find the longest consecutive sequence.
 
+    sort(nums.begin(),nums.end());
+    int longest=0;
+     int count=1;
+    for(int i=1;i<nums.size();i++){
+       
+       if(nums[i]==nums[i-1]) continue; // Skip duplicates
+       else if(nums[i]==nums[i-1]+1) count++; // If current number is consecutive to the previous one, increment count
+       else count=1; // Reset count if current number is not consecutive        
+        longest=max(longest,count);
+    }
+    return longest;
 }
 
 int optimal(vector<int>& nums){
@@ -37,7 +59,20 @@ int optimal(vector<int>& nums){
     // Space complexity: O(n)
     // We can use a hash set to store the elements of the array. Then, for each element, we can check if it is the start of a sequence (i.e., if the previous element is not in the set). If it is the start of a sequence, we can keep checking for the next elements in the sequence until we find a break. We can keep track of the longest sequence length found.
         // Create a hash set to store the elements of the array
-
+        unordered_set<int> s(nums.begin(),nums.end());
+        int longest=0;
+        for(int num:nums){
+            // Check if the current number is the start of a sequence
+            if(s.find(num-1)==s.end()){
+                int count=1;
+                // Keep checking for the next elements in the sequence
+                while(s.find(num+count)!=s.end()){
+                    count++;    
+                }
+                longest=max(longest,count);
+            }
+        }
+        return longest;
     
 }
 
