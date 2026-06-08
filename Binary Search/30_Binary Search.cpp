@@ -32,7 +32,7 @@ public:
     int main(){
         Solution s;
        vector<int> nums = {1, 2, 3, 4, 5};
-       cout<< "Iterative"<<s.search(nums,4)<<endl;
-       cout<< "Recursive"<<s.recursive(nums,4,0,nums.size()-1)<<endl;
+       cout<< "Iterative "<<s.search(nums,4)<<endl;
+       cout<< "Recursive "<<s.recursive(nums,4,0,nums.size()-1)<<endl;
        return 0;
     }
